@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Pr\351ambule}{}% 1
+\BOOKMARK [1][-]{section.2}{Installation d'un projet laravel via composer}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Pr\351requis}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Organisation d'un projet laravel.}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{R\351pertoire App.}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Autres repertoires.}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Fichiers de racine.}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Accessibilit\351.}{subsection.2.2}% 8
+\BOOKMARK [1][-]{section.3}{Impl\351mentation du mod\350le UML.}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Les Migrations}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.1}{documents de r\351f\351rence}{subsection.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Les Models}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.1}{documents de r\351f\351rence}{subsection.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Les Controllers}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Documents de r\351f\351rence}{subsection.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Les Routes}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Documents de r\351f\351rence}{subsection.3.4}% 17
+\BOOKMARK [2][-]{subsection.3.5}{Les vues}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Documents de r\351f\351rence}{subsection.3.5}% 19
+\BOOKMARK [1][-]{section.4}{Les Services Providers}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Helpers}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{Service}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Authentification avec breez}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Documents de r\351f\351rence}{subsection.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.4}{Localisation}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.5}{DOM PDF}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.6}{Import et Export Excel}{section.4}% 27

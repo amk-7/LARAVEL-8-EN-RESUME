@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage[pdftex]{hyperref} 
 \usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
 \author{KONDI Abdoul malik }
 \title{Synthèse des projets LARAVEL}
@@ -14,21 +15,127 @@
 \newpage
 
 \section{Préambule}
-Pour ...
+Ce document est un résumé du framework PHP LARAVEL (v8). Il est rédigé a partir des travaux
+que les équipes de la promotion \textbf{2020} à l'IFNTI (sokodé) on fournis après leurs  stage de fin L2.\\
 
 \newpage
 \section{Installation d'un projet laravel via composer}
+\subsection{Prérequis}
+Pour utiliser le framework LARAVEL il faut avoir:
+\begin{itemize}
+\item[•] Un PHP v > 7.4.
+\item[•] Composer (gestionnaire de dépendance php)[ \href{https://getcomposer.org/download/}{composer link}].
+\item[•] Les extensions suivante activé.
+\begin{itemize}
+\item[-] Version >= 7.2.0,
+\item[-] Extension PDO (Le driver pour une connexion avec une base de donnée),
+\item[-] Extension \textbf{pgsql} ou \textbf{mysql} ou autre selon votre SGBD.
+\item[-] Extension \textbf{mbstring}
+\item[-] Extension \textbf{opcache}
+\item[-] Extension \textbf{xml}
+\item[-] Extension \textbf{curl}
+\item[-] Extension \textbf{gd}
+\item[-] Extension openSSL
+\item[-] Extension json
+\item[-] Extension \textbf{fileinfo}
+\item[-] Extension \textbf{ctype}
+\item[-] Extension \textbf{BCMath}
+\item[-] Extension soap
+\item[-] Extension zip
+\item[-] Extension intl
+\item[-] Extension \textbf{common}
+\item[-] Extension imagick
+\item[-] Extension imap
+\end{itemize}
+\end{itemize}
 Il y a plusieurs façons de créer une application Laravel. La plus classique consiste à utiliser la commande 
 \textbf{create-project} de Composer. voici la syntaxe gnérale à utiliser.
 \begin{verbatim}
 composer create-project laravel/laravel chemain/du/repertoire --prefer-dist "version"
 \end{verbatim} 
-Créons une application Laravel 8 qui s’appelle \textbf{gevent}.
+Créons une application Laravel 8 qui s’appelle \textbf{G\_event}.
 \begin{verbatim}
-composer create-project laravel/laravel gevent --prefer-dist "8.*"
+composer create-project laravel/laravel G_event --prefer-dist "8.*"
 \end{verbatim}
 
-\section{Implémentation du model UML.}
+Une fois l'installation démarré, on a plus qu'a attendre quelques minutes pour que Composer fasse son travail jusqu'au bout. On verra s'afficher une liste de téléchargements. Au final on se retrouve avec cette architechture :
+
+\begin{center}
+\includegraphics[scale=0.7]{img/groot.png}
+\end{center}
+
+Laravel est équiper d'un server pour le developpement qui se lance avec cette commande :
+\textbf{php artisan serve}
+
+On peut vérifier que tout fonctionne bien en allant sur l'URL \textit{http://127.0.0.1:8000}. Normalement on doit obtenir cette page.
+
+\begin{center}
+\includegraphics[scale=0.5]{img/laravel_home.png}
+\end{center}
+
+Pour des mises à jour ultérieures il suffit encore d'utiliser Composer avec la commande update : \textbf{composer update}
+
+\textbf{Note :} Si vous installez Laravel en téléchargeant directement les fichiers sur Github et en utilisant la commande \textit{composer install}, il vous faut effectuer une action suplémentaires. En effet, dans ce cas la clé de sécurité ne sera pas automatiquement créé et vous allez tomber sur une erreur au lancement. Il faut donc la créer avec la commande.
+\textit{php artisan key:generate}.
+
+\subsection{Organisation d'un projet laravel.}
+\subsubsection{Répertoire App.}
+Le repertoire App est répertoire le plus important de votre projet. C'est lui qui contiendra
+votre application, c'est à dire tout votre code php (classes, fonctions ...).
+
+\begin{center}
+\includegraphics[scale=0.7]{img/gapp.png}
+\end{center}
+
+\begin{itemize}
+\item[•] Console : toutes les commandes en mode console,
+\item[•] Exceptions : pour gérer les erreurs d'exécution,
+\item[•] Http : tout ce qui concerne la communication : contrôleurs, middlewares (il y a 8 middlewares
+de base qui servent à filtrer les requêtes HTTP) et le kernel,
+\item[•] Providers : tous les fournisseurs de services (providers), il y en a déjà 5 au départ. Les providers
+servent à initialiser les composants.
+\item[•] Models : le dossier des modèles avec déjà un présent qui concerne les utilisateurs.
+\end{itemize}
+
+\subsubsection{Autres repertoires.}
+Voici une description du contenu des autres dossiers :
+\begin{itemize}
+\item[•] bootstrap : scripts d'initialisation de Laravel pour le chargement automatique des classes, la fixation de l'environnement et des chemins, et pour le démarrage de l'application,
+\item[•] public : tout ce qui doit apparaître dans le dossier public du site : images, CSS, scripts...
+\item[•] config : toutes les configurations : application, authentification, cache, base de données, espaces
+de noms, emails, systèmes de fichier, session...
+\item[•] database : migrations et populations,
+Le dossier database permet la gestion de la base données. Il contient trois sous-dossier.
+Les migrations sont des fichiers permettant de décrire votre base de données afin de permettre
+à Laravel de créer, modifier ou supprimer les tables et les colonnes automatiquement pour vous.
+\item[•] resources : vues, fichiers de langage et assets (par exemple les fichiers Sass),
+\item[•] routes : la gestion des urls d'entrée de l'application,
+\item[•] storage : données temporaires de l'application : vues compilées, caches, clés de session. . .
+\item[•] tests : fichiers de tests unitaires,
+\item[•] vendor : tous les composants de Laravel et de ses dépendances (créé par composer).
+\end{itemize}
+
+\subsubsection{Fichiers de racine.}
+Il y a un certain nombre de fichiers dans la racine dont voici les principaux :
+
+\begin{itemize}
+\item[•] artisan : outil en ligne (ligne de commande) de Laravel pour des tâches de gestion,
+\item[•] composer.json : fichier de référence de composer,
+\item[•] package.json : fichier de référence de npm pour les assets,
+\item[•] phpunit.xml : fichier de configuration de phpunit (pour les tests unitaires),
+\item[•] .env : fichier pour spécifier l'environnement d'exécution.
+\end{itemize}
+Le fichiers \textbf{.env} contient les mots de passe de vos services ainsi que toutes les
+données sensibles de votre application (mot de passe de base de données, adresse de la base de données...). Ce fichier ne doit jamais être partagé. Afin de connaître les informations à
+renseigner, il existe un fichier .env.example qui contient uniquement des valeurs d'exemple.
+Nous verrons tout cela progressivement dans cette documentation.
+
+\subsubsection{Accessibilité.}
+Pour des raisons de securité sur le serveur seul le dossier public est accessible.
+Cette configuration n'est pas toujours possible sur un serveur mutualisé (partagé). Il faut alors modifier un tout petit peu Laravel pour que ça fonctionne. Nous en palerons peut être dans la partie déployement.
+
+\newpage
+\section{Implémentation du modèle UML.}
 Laravel dans sont fonctionnement implémente le pattern MVC (Modèle Vue Controller). Le tableau
 explicite mieux cela.
 \begin{center}
@@ -44,8 +151,12 @@ Controlleur & Route + Controller \\
 \hline 
 \end{tabular} 
 \end{center}
+Voici le modèle UML que nous utiliserons.
+\begin{center}
+\includegraphics[scale=0.7]{img/model.png}
+\end{center} 
 \subsection{Les Migrations}
-Maintenant que l'application \textbf{gevent} a été créer nous allons maintement créer une base de données appelé \textbf{gevent}. Une fois que c'est fait nous allons connecter notre application \textbf{LARAVEL} à la base de donnée \textbf{gevent}. Pour le faire rendons nous au niveau du fichier
+Maintenant que l'application \textbf{G\_event} a été créer nous allons maintement créer une base de données appelé \textbf{gevent}. Une fois que c'est fait nous allons connecter notre application \textbf{LARAVEL} à la base de donnée \textbf{gevent}. Pour le faire rendons nous au niveau du fichier
 \textbf{.env}. Vous vous souvenez c'est le fichier dans le quelle on configure l'environement \textbf{LARAVEL} (on peut y spécifier la base de données utilisé, le serveur
 de messagerie de notre choix ...). Une fois que le fichier ouvert, modifier les valeurs des
 constant \textbf{DB\_CONNECTION}, \textbf{DB\_HOST}, \textbf{DB\_PORT}, \textbf{DB\_DATABASE}, \textbf{DB\_USERNAME}, \textbf{DB\_PASSWORD} comme ceci.
