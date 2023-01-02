@@ -200,7 +200,7 @@ NB:
 chacune d'elle. Encore une fois c'est la convention qui l'oblige.
 \end{itemize}
 
-Une fois que les migration crée voici leur contenue.
+Une fois que les migration crée voici leur contenu.
 \begin{itemize}
 \item[•] users
 \begin{verbatim}
@@ -440,7 +440,7 @@ Vous vous demandez sûrement pourquoi nous n'avons pas créer de modèle pour la
 La réponse à cette que la méthode que nous allons utiliser ici au niveau du modèle pour régler ce
 problème ne nécessite pas de modèle association.
 
-Voici le contenue de nos modèles.\\
+Voici le contenu de nos modèles.\\
 
 \begin{itemize}
 \item[•] User
@@ -1113,12 +1113,15 @@ Je vous laisse essayer de remplir ce fichier avant de continuer. C'est fait ? Vo
 
 namespace App\Helpers;
 
+use App\Models\Evenement;
+
 class EvenementHelper
 {
     
-    public static function afficherAdresse(array $array)
+    public static function afficherAdresse(Evenement $evenement)
     {
-        return "À ".$array['ville'].", ".$array['quartier']." vers le ".$array['lieu'];
+    	   $adresse = $evenement->adresse;
+        return "À ".$adresse['ville'].", ".$adresse['quartier']." vers le ".$adresse['lieu'];
     }
 }
 \end{verbatim}
@@ -1127,7 +1130,7 @@ Comment l'utiliser dans nos vues ?\\
 Pour l'utiliser au niveau des vues (dans notre cas dans la vue evenement/index) on import l'helper comme
 ceci.
 \begin{verbatim}
-<td>{{ \App\Helpers\EvenementHelper::afficherAdresse($event->adresse) }}</td>
+<td>{{ \App\Helpers\EvenementHelper::afficherAdresse($event) }}</td>
 \end{verbatim}
 
 Avant l'helper :
@@ -1141,12 +1144,14 @@ Après l'helper :
 
 \subsection{Service}
 
-Les services sont comme les helpers mais eux ils sont axé côté modèle.
+Les services sont comme les helpers mais sont axé côté modèle.
 Vous pouvez remarquer que pour valider les formulaires aux niveau des méthodes \textbf{store et update}
-du contrôleur \textbf{evenementController} on écrit les mêmes instructions. Et vous le savez bien dupliquer du code c'est mal. Les services sont la en partie pour nous aider à régler cela.
-Pour utiliser un service il n'y a pas de module à installer. on crée seulement le répertoire \textbf{Service} dans \textbf{app/}. Une fois le répertoire créer, on créer une classe service et on
-n'y définit le plus souvent des méthodes static. Nous allons donc créer un classe php qui s'appelle
-\textbf{EvenementService} dans la quelle nous allons créer la méthodes static \textbf{} qui prend la variable \$request en parametre comme ceci.
+du contrôleur \textbf{EvenementController} on écrit les mêmes instructions. Et vous le savez bien dupliquer du code n'est pas optimal. Les services sont la en partie pour nous aider à régler ce problème d'optimisation.
+Pour utiliser un service il n'y a pas de module à installer. On crée seulement le répertoire \textbf{Service} dans \textbf{app/}. Une fois le répertoire créé, on créer une classe Service et on
+y définit le plus souvent des méthodes statiques. Nous allons donc créer une classe PHP qui s'appelle
+\textbf{EvenementService} dans laquelle nous allons créer la méthode statique \textbf{} qui prend la variable \$request en parametre comme ceci.
+
+\newpage
 
 \begin{verbatim}
 <?php
@@ -1173,7 +1178,7 @@ class EvenementService
 \end{verbatim}
 
 Comment l'utiliser dans nos contrôleurs ?\\
-Pour l'utiliser au niveau des contrôleurs (dans notre cas dans le contrôleur evenementController) on utilise le service comme
+Pour l'utiliser au niveau des contrôleurs (dans notre cas dans le contrôleur EvenementController) on utilise le service comme
 ceci.
 \begin{verbatim}
 public function store(Request $request)
@@ -1231,11 +1236,10 @@ public function store(Request $request)
     }
 \end{verbatim}
 
-\subsection{Authentification avec breez}
-Il existe deux systèmes d'authentification avec LARAVEL à savoir \textbf{UI} et \textbf{BREEZ}. Mais dans ce document nous allons voir \textbf{BREEZ}. Pour installer
-breez dans laravel voici comment s'y prendre.\\
-Lancer les commandes suivante mais avant sauvegarder vos routes autre par que dans 
-l'application LARAVEL car Breez les supprimera.
+\subsection{Authentification avec breeze}
+Il existe deux systèmes d'authentification avec LARAVEL à savoir \textbf{UI} et \textbf{BREEZE}. Mais dans ce document nous allons voir \textbf{BREEZE}. Pour installer
+breeze dans un projet Laravel voici comment s'y prendre.\\
+Lancer les commandes suivante mais avant sauvegarder vos routes dans un fichier, car Breeze les supprimera.
 
 \begin{verbatim}
 composer require laravel/breeze:1.9.2
@@ -1246,9 +1250,8 @@ npm run dev
 php artisan migrate
 \end{verbatim}
 
-Une fois breez installer, reporter vos route dans le fichier web.php.
-Si vous voulez qu'un utilisateur soi authentifier avant d'accéder au tableau de bord
-voici ce qu'il faut faire.
+Une fois breeze installé, reporter vos routes dans le fichier web.php.
+Si vous voulez que l'accès au tableau de bord requiert une authentification voici ce qu'il faut faire.
 \begin{verbatim}
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
@@ -1260,11 +1263,10 @@ Route::group(['middleware' => ['auth']], function () {
 Preuve:
 
 Maintenant vous allez vous demander sûrement comment gérer les rôles et les permissions ?
-Ne vous inquiétez pas. Pour gérer les rôles et le permissions nous allons utiliser
-LARAVEL spatie. Pour l'installer lancer la commande suivante.
+Ne vous inquiétez pas. Pour gérer les rôles et le permissions nous allons utiliser LARAVEL Spatie. Pour l'installer lancer la commande suivante.
 
 \begin{verbatim}
- composer require spatie/laravel-permission
+composer require spatie/laravel-permission
 \end{verbatim}
 
 Après l'installation ajouter dans le fichier config/app.php la ligne suivante :
@@ -1283,8 +1285,7 @@ php artisan config:clear
 php artisan migrate
 \end{verbatim}
 
-A cette étape on peut commencer à utiliser spatie mais nous allons ajouter trois ligne 
-dans la variable \textit{routeMiddleware} comme ceci.
+A cette étape on peut commencer à utiliser Spatie mais nous allons ajouter trois lignes dans la variable \textit{routeMiddleware} comme ceci.
 \begin{verbatim}
 protected $routeMiddleware = [
         .............................
@@ -1378,15 +1379,14 @@ EN :
 \end{center}
 
 \subsection{DOM PDF}
-Il existe plusieurs façon de générer un fichier pdf avec \textbf{PHP LARAVEL}. La méthode que 
-nous allons voir ici est l'utilisation du Service \textbf{DOM PDF}.
+Il existe plusieurs façon de générer un fichier PDF avec \textbf{PHP LARAVEL}. La méthode que nous allons voir ici est l'utilisation du Service \textbf{DOM PDF}.
 Pour l'installer voici ce qu'il faut faire.
 
 \begin{verbatim}
 composer require barryvdh/laravel-dompdf
 \end{verbatim}
 
-Maintenant que le service est installer, essayons de générer un pdf lorsqu'on clique sur le bouton
+Maintenant que le service est installer, essayons de générer un PDF lorsqu'on clique sur le bouton
 participer. Pour le faire, nous allons modifier le fichier \textbf{evenement/index} comme ceci.
 \begin{verbatim}
 <td>{{ $event->organisateur }}</td>
@@ -1467,8 +1467,8 @@ Et voila le résultat.\\
 
 
 \subsection{Import et Export Excel}
-Pour implémenter l'import en des données depuis un fichier Excel vers notre base de donné on utilise le
-module . Voici comment on l'installe.
+Pour implémenter l'importation des données depuis un fichier Excel vers notre base de données on utilise le
+module \textbf{excel}. Voici comment on l'installe.
 
 \begin{verbatim}
 composer require maatwebsite/excel
@@ -1483,7 +1483,7 @@ notre modèle Evenement comme ceci.
 php artisan make:import EvenementImport --model=Evenement
 \end{verbatim}
 
-Voici le contenue par défaut le la classe EvenementImport.
+Voici le contenu par défaut le la classe EvenementImport.
 \begin{verbatim}
 <?php
 
@@ -1511,7 +1511,7 @@ Voici le format de notre fichier Excel.\\
 \begin{center}
 \includegraphics[scale=0.5]{img/fichier_excel.png}
 \end{center}
-Changer le contenue de la méthode model par ce qui suit.
+Changer le contenu de la méthode model par ce qui suit.
 \begin{verbatim}
 <?php
 
@@ -1553,15 +1553,14 @@ class EvenementImport implements ToModel
 }
 \end{verbatim}
 
-Maintenant que c'est fait, il nous faut créer deux routes une pour télécharger le fichier
-excel et l'autre pour charger le contenue du fichier en base de donné comme ceci.
+Maintenant que c'est fait, il nous faut créer deux routes une pour télécharger le fichier Excel et l'autre pour charger le contenu du fichier en base de données comme ceci.
 \begin{verbatim}
 Route::get('formulaire_import_excel', [\App\Http\Controllers\EvenementController::class, 'importEvent'])->name('formulaireImportExcel');
 Route::post('import_excel', [\App\Http\Controllers\EvenementController::class, 'importEventStore'])->name('importExcel');
 \end{verbatim}
 
-Évidement nous devons créer les deux méthode : importEvent et importEventStore.
-Voici leur contenue.
+Évidement nous devons créer les deux méthodes : importEvent et importEventStore.
+Voici leur contenu.
 \begin{verbatim}
 public function importEvent()
     {
@@ -1578,9 +1577,8 @@ public function importEventStore(Request $request)
     }
 \end{verbatim}
 \begin{itemize}
-\item[•] La méthode \textbf{importEvent} est classique elle retourne le formulaire
-d'import excel.
-\item[•] La deuxième méthode \textbf{importEventStore} est quant à elle nous permet de stocker puis d’enregistrer les données du fichier excel dans la base. Mais pour que cela marche il faut créer un line symbolique vers le dossier storage avec la commande suivante.
+\item[•] La méthode \textbf{importEvent} est classique elle retourne le formulaire d'import Excel.
+\item[•] La deuxième méthode \textbf{importEventStore} est quant à elle nous permet de stocker puis d’enregistrer les données du fichier excel dans la base. Mais pour que cela marche il faut créer un lien symbolique vers le dossier storage avec la commande suivante.
 \begin{verbatim}
 php artisan storage:link
 \end{verbatim}
