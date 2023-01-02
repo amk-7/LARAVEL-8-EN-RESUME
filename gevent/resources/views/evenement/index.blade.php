@@ -9,7 +9,11 @@
                 <input type="submit" name="ajouter" value="Ajouter">
             </form>
             <form method="get" action="{{route('formulaireImportExcel')}}">
-                <input type="submit" name="ajouter" value="Importer">
+                <input type="submit" name="import" value="Importer">
+            </form>
+            <form method="post" action="{{route('exportExcel')}}">
+            	@csrf
+                <input type="submit" name="export" value="Exporter">
             </form>
         </div>
         @if($evenements && $evenements->count() > 0)

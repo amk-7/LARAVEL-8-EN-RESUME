@@ -30,8 +30,11 @@ Route::get('formulaire_editer_evenement/{evenement}/editer', [\App\Http\Controll
 Route::put('mise_a_jour_evenement/{evenement}', [\App\Http\Controllers\EvenementController::class, 'update'])->name('miseAjourEvenement');
 Route::delete('supprimer_evenement/{evenement}', [\App\Http\Controllers\EvenementController::class, 'destroy'])->name('supprimerEvenement');
 Route::put('mise_a_jour_evenement/{evenement}', [\App\Http\Controllers\EvenementController::class, 'update'])->name('miseAjourEvenement');
+
 Route::get('formulaire_import_excel', [\App\Http\Controllers\EvenementController::class, 'importEvent'])->name('formulaireImportExcel');
 Route::post('import_excel', [\App\Http\Controllers\EvenementController::class, 'importEventStore'])->name('importExcel');
+
+Route::post('export_excel', [\App\Http\Controllers\EvenementController::class, 'exportEvent'])->name('exportExcel');
 
 Route::post('genarate_pdf/{evenement}', [\App\Http\Controllers\EvenementController::class, 'genererPDF'])->name('generatePdf');
 
