@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2022.11.28)  2 JAN 2023 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2022.11.28)  2 JAN 2023 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,25 +702,25 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 53.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<img/groot.png, id=155, 728.7225pt x 405.515pt>
+<img/groot.png, id=176, 728.7225pt x 405.515pt>
 File: img/groot.png Graphic file (type png)
 <use img/groot.png>
 Package pdftex.def Info: img/groot.png  used on input line 64.
 (pdftex.def)             Requested size: 510.10226pt x 283.85855pt.
  [3]
-<img/laravel_home.png, id=164, 964.60374pt x 573.14125pt>
+<img/laravel_home.png, id=185, 964.60374pt x 573.14125pt>
 File: img/laravel_home.png Graphic file (type png)
 <use img/laravel_home.png>
 Package pdftex.def Info: img/laravel_home.png  used on input line 73.
 (pdftex.def)             Requested size: 482.30069pt x 286.56992pt.
  [4 <./img/groot.png> <./img/laravel_home.png>]
-<img/gapp.png, id=173, 720.6925pt x 186.6975pt>
+<img/gapp.png, id=193, 720.6925pt x 186.6975pt>
 File: img/gapp.png Graphic file (type png)
 <use img/gapp.png>
 Package pdftex.def Info: img/gapp.png  used on input line 87.
 (pdftex.def)             Requested size: 504.48132pt x 130.68735pt.
  [5 <./img/gapp.png>] [6]
-<img/model.png, id=183, 643.40375pt x 530.98375pt>
+<img/model.png, id=203, 643.40375pt x 530.98375pt>
 File: img/model.png Graphic file (type png)
 <use img/model.png>
 Package pdftex.def Info: img/model.png  used on input line 156.
@@ -791,24 +791,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 760--765
  []
 
 [19] [20] [21] [22] [23] [24]
-<img/laravel.png, id=259, 808.01875pt x 454.69875pt>
+<img/laravel.png, id=279, 808.01875pt x 454.69875pt>
 File: img/laravel.png Graphic file (type png)
 <use img/laravel.png>
 Package pdftex.def Info: img/laravel.png  used on input line 1089.
 (pdftex.def)             Requested size: 404.00839pt x 227.34882pt.
-<img/MVC-Support.jpg, id=260, 1003.75pt x 501.875pt>
+<img/MVC-Support.jpg, id=280, 1003.75pt x 501.875pt>
 File: img/MVC-Support.jpg Graphic file (type jpg)
 <use img/MVC-Support.jpg>
 Package pdftex.def Info: img/MVC-Support.jpg  used on input line 1092.
 (pdftex.def)             Requested size: 501.87378pt x 250.93687pt.
  [25 <./img/laravel.png>] [26 <./img/MVC-Support.jpg>]
-<img/evenement_before_helper.png, id=271, 965.6075pt x 265.99374pt>
+<img/evenement_before_helper.png, id=291, 965.6075pt x 265.99374pt>
 File: img/evenement_before_helper.png Graphic file (type png)
 <use img/evenement_before_helper.png>
 Package pdftex.def Info: img/evenement_before_helper.png  used on input line 11
 35.
 (pdftex.def)             Requested size: 482.80257pt x 132.99654pt.
-<img/evenement_after_helper.png, id=272, 964.60374pt x 274.02374pt>
+<img/evenement_after_helper.png, id=292, 964.60374pt x 274.02374pt>
 File: img/evenement_after_helper.png Graphic file (type png)
 <use img/evenement_after_helper.png>
 Package pdftex.def Info: img/evenement_after_helper.png  used on input line 113
@@ -854,12 +854,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1369--1370
 
  []
 
-<img/fr.png, id=292, 964.60374pt x 346.29375pt>
+<img/fr.png, id=312, 964.60374pt x 346.29375pt>
 File: img/fr.png Graphic file (type png)
 <use img/fr.png>
 Package pdftex.def Info: img/fr.png  used on input line 1373.
 (pdftex.def)             Requested size: 482.30069pt x 173.14644pt.
-<img/en.png, id=293, 963.6pt x 324.21124pt>
+<img/en.png, id=313, 963.6pt x 324.21124pt>
 File: img/en.png Graphic file (type png)
 <use img/en.png>
 Package pdftex.def Info: img/en.png  used on input line 1377.
@@ -881,7 +881,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1463--1464
 
  []
 
-<img/pdf.png, id=305, 961.5925pt x 503.8825pt>
+<img/pdf.png, id=325, 961.5925pt x 503.8825pt>
 File: img/pdf.png Graphic file (type png)
 <use img/pdf.png>
 Package pdftex.def Info: img/pdf.png  used on input line 1465.
@@ -893,61 +893,115 @@ lServiceProvider" --tag=config[]
  []
 
 [33 <./img/pdf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1509--1510
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1511
 
  []
 
-<img/fichier_excel.png, id=311, 910.40125pt x 157.58875pt>
+<img/fichier_excel.png, id=331, 910.40125pt x 157.58875pt>
 File: img/fichier_excel.png Graphic file (type png)
 <use img/fichier_excel.png>
-Package pdftex.def Info: img/fichier_excel.png  used on input line 1511.
+Package pdftex.def Info: img/fichier_excel.png  used on input line 1512.
 (pdftex.def)             Requested size: 455.19951pt x 78.79417pt.
 [34 <./img/fichier_excel.png>]
-Overfull \hbox (45.8794pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (45.8794pt too wide) in paragraph at lines 1554--1554
 []            \T1/cmtt/m/n/12 'organisateur' => User::all()->where('nom', strto
 upper($row[4]))->first()->id_user,[] 
  []
 
 
-Overfull \hbox (298.99258pt too wide) in paragraph at lines 1560--1560
+Overfull \hbox (298.99258pt too wide) in paragraph at lines 1561--1561
 []\T1/cmtt/m/n/12 Route::get('formulaire_import_excel', [\App\Http\Controllers\
 EvenementController::class, 'importEvent'])->name('formulaireImportExcel');[] 
  []
 
 
-Overfull \hbox (206.3902pt too wide) in paragraph at lines 1560--1560
+Overfull \hbox (206.3902pt too wide) in paragraph at lines 1561--1561
 []\T1/cmtt/m/n/12 Route::post('import_excel', [\App\Http\Controllers\EvenementC
 ontroller::class, 'importEventStore'])->name('importExcel');[] 
  []
 
 
-Overfull \hbox (58.22638pt too wide) in paragraph at lines 1578--1578
+Overfull \hbox (58.22638pt too wide) in paragraph at lines 1579--1579
 []        \T1/cmtt/m/n/12 Excel::import(new EvenementImport(), "public/".$path)
 ; // importer les données du fichier[] 
  []
 
 [35]
-Overfull \hbox (44.38663pt too wide) in paragraph at lines 1606--1606
+Overfull \hbox (44.38663pt too wide) in paragraph at lines 1607--1607
  []    \T1/cmtt/m/n/12 <form method="post" action="{{ route('importExcel') }}" 
 enctype="multipart/form-data">[] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1609.
-[36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1609.
+<img/before_import.png, id=341, 962.59625pt x 345.29pt>
+File: img/before_import.png Graphic file (type png)
+<use img/before_import.png>
+Package pdftex.def Info: img/before_import.png  used on input line 1612.
+(pdftex.def)             Requested size: 529.42958pt x 189.91008pt.
+<img/import_form.png, id=342, 739.76375pt x 158.5925pt>
+File: img/import_form.png Graphic file (type png)
+<use img/import_form.png>
+Package pdftex.def Info: img/import_form.png  used on input line 1616.
+(pdftex.def)             Requested size: 443.86166pt x 95.15622pt.
+<img/import.png, id=343, 965.6075pt x 326.21875pt>
+File: img/import.png Graphic file (type png)
+<use img/import.png>
+Package pdftex.def Info: img/import.png  used on input line 1620.
+(pdftex.def)             Requested size: 531.08577pt x 179.42085pt.
+[36 <./img/before_import.png> <./img/import_form.png>]
+Overfull \hbox (1.17218pt too wide) in paragraph at lines 1642--1642
+ []        \T1/cmtt/m/n/12 return Excel::download(new EvenementExport(), "liste
+_des_evenements.xlsx");[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1654
+
+ []
+
+<img/export_index.png, id=350, 964.60374pt x 501.875pt>
+File: img/export_index.png Graphic file (type png)
+<use img/export_index.png>
+Package pdftex.def Info: img/export_index.png  used on input line 1655.
+(pdftex.def)             Requested size: 530.5337pt x 276.03209pt.
+[37 <./img/import.png>]
+<img/export_d.png, id=357, 1277.77374pt x 338.26375pt>
+File: img/export_d.png Graphic file (type png)
+<use img/export_d.png>
+Package pdftex.def Info: img/export_d.png  used on input line 1658.
+(pdftex.def)             Requested size: 511.10045pt x 135.30309pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1660--1661
+
+ []
+
+<img/export_file.png, id=358, 980.66376pt x 116.435pt>
+File: img/export_file.png Graphic file (type png)
+<use img/export_file.png>
+Package pdftex.def Info: img/export_file.png  used on input line 1662.
+(pdftex.def)             Requested size: 539.36673pt x 64.03944pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1666--1669
+
+ []
+
+[38 <./img/export_index.png> <./img/export_d.png> <./img/export_file.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1729.
+
+[39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1729.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1609.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1609.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1729.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1729.
 
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: E06D95D15671A1C479FD2E4B4B36F93C;1924.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1609.
+(rerunfilecheck)             Checksum: 7C0BA546F91484A281CE3227E8E25516;2167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1729.
  ) 
 Here is how much of TeX's memory you used:
- 7026 strings out of 494880
- 98096 string characters out of 6179600
- 186909 words of memory out of 5000000
- 10187 multiletter control sequences out of 15000+600000
+ 7067 strings out of 494880
+ 98882 string characters out of 6179600
+ 187915 words of memory out of 5000000
+ 10215 multiletter control sequences out of 15000+600000
  17281 words of font info for 52 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  28i,6n,28p,401b,511s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -960,10 +1014,10 @@ home/amk/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </h
 ome/amk/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </ho
 me/amk/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on rapport.pdf (36 pages, 671671 bytes).
+Output written on rapport.pdf (39 pages, 863447 bytes).
 PDF statistics:
- 771 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
- 65 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 827 PDF objects out of 1000 (max. 8388607)
+ 341 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

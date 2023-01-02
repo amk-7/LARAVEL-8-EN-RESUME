@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\EvenementImport;
+use App\Exports\EvenementExport;
 use App\Models\Evenement;
 use App\Models\Organisateur;
 use App\Models\User;
@@ -149,6 +150,11 @@ class EvenementController extends Controller
         $file->storeAs("public/", $path);
         Excel::import(new EvenementImport(), "public/".$path);
         return redirect()->route('listeEvenements');
+    }
+    
+    public function exportEvent(Request $request)
+    {
+        return Excel::download(new EvenementExport(), "liste_des_evenements.xlsx");
     }
 
     public function genererPDF(Evenement $evenement){

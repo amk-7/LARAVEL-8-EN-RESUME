@@ -1475,6 +1475,7 @@ composer require maatwebsite/excel
 php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config
 \end{verbatim}
 
+\subsubsection{Import}
 Si nous voulons importer une liste d'événements, on créer un modèle import correspondant a notre
 notre modèle Evenement comme ceci.
 
@@ -1605,7 +1606,126 @@ Il nous faut aussi définir l'attribut \textbf{entype} de la balise form \textbf
 </html>
 \end{verbatim}
 \end{itemize}
+Voici le résultat : \\
+Avant l'import.
+\begin{center}
+\includegraphics[scale=0.55]{img/before_import.png}
+\end{center}
+Choisissez votre fichier excel.
+\begin{center}
+\includegraphics[scale=0.6]{img/import_form.png}
+\end{center}
+Après l'import.
+\begin{center}
+\includegraphics[scale=0.55]{img/import.png}
+\end{center}
 
+\subsubsection{Export}
+Pour exporter notre la liste de nos événements dans un fichier excel. On procède comme
+ceci : 
+\begin{itemize}
+\item[•] On créer une classe export comme ceci.
+\begin{verbatim}
+php artisan make:export EvenementExport --model=Evenement
+\end{verbatim}
+\item[•] Ensuite une route dans le fichier route/web.php.
+\begin{verbatim}
+Route::post('export_excel', [\App\Http\Controllers\EvenementController::class,
+ 'exportEvent'])->name('exportExcel');
+\end{verbatim}
+\item[•] Ensuit on crée la méthode \textbf{exportEvent}.
+\begin{verbatim}
+public function exportEvent(Request $request)
+    {
+        return Excel::download(new EvenementExport(), "liste_des_evenements.xlsx");
+    }
+\end{verbatim}
+\item[•] Puis on créer un bouton de téléchargement dans la vue index.blade.php.
+\begin{verbatim}
+<form method="post" action="{{route('exportExcel')}}">
+       @csrf
+      <input type="submit" name="export" value="Exporter">
+</form>
+\end{verbatim}
+\end{itemize}
+
+Voici le résultat : \\
+Avant l'export. \\
+\begin{center}
+\includegraphics[scale=0.55]{img/export_index.png}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.4]{img/export_d.png}
+\end{center}
+Après l'export. \\
+\begin{center}
+\includegraphics[scale=0.55]{img/export_file.png}
+\end{center}
+
+\section{Déploiements}
+Il y-à plusieurs façons de déployer une application fait en Laravel sur un serveur d'application (Apache2, NginX). Ici nous allons voir comment utiliser \textbf{Apache2} pour
+déployer notre site.\\
+\textbf{NB:} Ceci est valide pour un déploiement sans logiciel de gestion de site web.\\
+
+Avant de continuer créer un répertoire git pour votre projet. C'est fait ? alors on peut continuer...
+
+\subsection{Sous linux}
+Connecter vous à la machine sur le quelle vous devez faire et déploiement. Récupérer votre projet sur cette machine en faisant un \textit{git clone https://....} dans le répertoire 
+\textbf{www}. Ensuit, 
+installer vos dépendance : \textbf{php} et toute ses dépendance,\textbf{composer ...} et
+\href{https://doc.ubuntu-fr.org/apache2}{apache 2}. Une fois apache installer sur votre 
+système. Ouvrez un terminal et rendez vous au niveau de votre projet (cd ...). Pour le moment
+démarrez le serveur de production, vous remarquerez que ça ne marche pas. \\
+Quelle est l'erreur ? Comment compté vous la corriger ? Fait le.
+Relancer le serveur. Ça ne marche toujours pas ! Quelle est l'erreur ? Comment compté vous la
+corriger ? Fait le.
+\textbf{NB:} Si vous avez des difficulté, sachez que les erreurs surgissent car le 
+vendor et le .env n'existe plus (à cause de git).
+
+Une fois que le vendor et le .env ont été recréer, relancer le serveur de production. Ça marche super. Arrêter le.
+
+\textbf{NB :} Si vous avez d'autre type d'erreur comprenez les et essayé de le 
+réglé. Le plus souvent ça peut être des module non installer (Ex: pdo) ou la base de 
+donnée non configuré ou installé.
+
+Changer le propriétaire de votre application en \textbf{www-data} comme ceci.
+\begin{verbatim}
+chown -R www-data:www-data nom_projet
+\end{verbatim} 
+Après rendez vous au niveau de votre du répertoire d'apache2.
+\begin{verbatim}
+cd /etc/apache2/
+\end{verbatim} 
+Puis créer un fichier de configuration pour votre application.
+\begin{verbatim}
+nano sites-available/mon_projet.conf
+\end{verbatim}
+Mettez s'y ceci.
+\begin{verbatim}
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName name.com
+    DocumentRoot projet_path/public
+
+    <Directory projet_path>
+    Options Indexes FollowSymlinks
+    AllowOverride All
+    Require all granted
+    </Directory>
+
+    SSLEngine on
+    
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+\end{verbatim}
+Sauvegardé et quitté. Monté maintenant le site  en faisant:
+\begin{verbatim}
+sudo a2dissite 000-default.conf 
+sudo a2ensite mon_projet.conf
+\end{verbatim}
+Redémarrer votre serveur apache. Normalement si vous rendez au niveau de votre 
+localhost vous pouvez remarquer que votre application à bien été hébergé.
 \end{document}
 
 
