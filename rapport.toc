@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Pr\IeC {\'e}ambule}{2}
+\contentsline {section}{\numberline {2}Installation d'un projet laravel via composer}{3}
+\contentsline {section}{\numberline {3}Impl\IeC {\'e}mentation du model UML.}{3}
+\contentsline {subsection}{\numberline {3.1}Les Migrations}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}documents de r\IeC {\'e}f\IeC {\'e}rence}{8}
+\contentsline {subsection}{\numberline {3.2}Les Models}{8}
+\contentsline {subsubsection}{\numberline {3.2.1}documents de r\IeC {\'e}f\IeC {\'e}rence}{12}
+\contentsline {subsection}{\numberline {3.3}Les Controllers}{12}
+\contentsline {subsubsection}{\numberline {3.3.1}Documents de r\IeC {\'e}f\IeC {\'e}rence}{13}
+\contentsline {subsection}{\numberline {3.4}Les Routes}{13}
+\contentsline {subsubsection}{\numberline {3.4.1}Documents de r\IeC {\'e}f\IeC {\'e}rence}{14}
+\contentsline {subsection}{\numberline {3.5}Les vues}{14}
+\contentsline {subsubsection}{\numberline {3.5.1}Documents de r\IeC {\'e}f\IeC {\'e}rence}{20}
+\contentsline {section}{\numberline {4}Les Services Providers}{21}
+\contentsline {subsection}{\numberline {4.1}Helpers}{21}
+\contentsline {subsection}{\numberline {4.2}Service}{22}
+\contentsline {subsection}{\numberline {4.3}Authentification avec breez}{24}
+\contentsline {subsubsection}{\numberline {4.3.1}Documents de r\IeC {\'e}f\IeC {\'e}rence}{25}
+\contentsline {subsection}{\numberline {4.4}Localisation}{26}
+\contentsline {subsection}{\numberline {4.5}DOM PDF}{27}
+\contentsline {subsection}{\numberline {4.6}Import et Export Excel}{29}
